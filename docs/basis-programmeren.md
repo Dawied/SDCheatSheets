@@ -33,7 +33,7 @@ Installeer Node.js en Visual Studio Code
 
 Open Visual Studio Code en maak een folder aan met de naam "sdcheatsheets". Maak in de nieuwe folder een nieuw bestand aan met de naam helloworld.js.
 
-<img src="/assets/gifs/helloworld-create-file.gif">
+![](assets/gifs/helloworld-create-file.gif)
 
 Het is een goed gebruik om je eerste programma in een nieuwe taal "hello world" te noemen.
 
@@ -49,7 +49,7 @@ node .\helloworld.js # (1)!
 
 1.  :man_raising_hand: **Je hoef niet alles zelf te typen!** Begin met **"node hel"** te typen, en druk dan op de Tab toets om de Terminal de rest automatisch af te laten maken.
 
-<img src="/assets/gifs/helloworld-write-code.gif">
+![](assets/gifs/helloworld-write-code.gif)
 
 Nu je het hello world JavaScript programma werkend hebt, kunnen we aan de slag met het verkennen van de basisingrediënten van programmeren.
 
