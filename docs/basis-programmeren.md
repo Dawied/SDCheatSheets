@@ -13,7 +13,7 @@ De basis van elke programmeertaal bestaat uit maar een paar dingen. En omdat pro
 * Data Structures
 * Input en Output
 
-Deze elementen komen in elke taal terug.
+Deze elementen komen in elke taal terug!
 
 De enige manier om te leren programmeren is door programma's te schrijven. Maar welke taal moet je kiezen om mee te starten? In deze Cheat Sheet wordt JavaScript gebruikt.
 
