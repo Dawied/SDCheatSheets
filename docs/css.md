@@ -1,6 +1,7 @@
-<div class="sdcs-header">
-  <img src="/assets/images/css3-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/CSS3-logo.png)
 </div>
+
 
 
 # CSS Cheat Sheet

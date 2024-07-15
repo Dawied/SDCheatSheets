@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="/assets/images/CheatSheets-logo.jpeg" style="border-radius: 50px">
+<p align="center" markdown>
+  ![](assets/images/cheatsheets-logo.png)
 </p>
 
 # Welkom bij de SD Cheat Sheets

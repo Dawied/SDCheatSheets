@@ -1,6 +1,7 @@
-<div class="sdcs-header">
-  <img src="/assets/images/editor-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/editor-logo.png)
 </div>
+
 
 # Editors Cheat Sheet
 

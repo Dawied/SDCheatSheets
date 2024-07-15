@@ -1,7 +1,6 @@
-<div class="sdcs-header">
-  <img src="/assets/images/php-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/PHP-logo.png)
 </div>
-
 
 # PHP Cheat Sheet
 

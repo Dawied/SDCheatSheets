@@ -1,6 +1,7 @@
-<div class="sdcs-header">
-  <img src="/assets/images/html5-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/HTML5-logo.png)
 </div>
+
 # HTML Cheat sheet
 
 ## HyperText Markup Language

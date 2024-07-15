@@ -1,5 +1,5 @@
-<div class="sdcs-header">
-  <img src="/assets/images/PHPMySQL-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/PHPMySQL-logo.png)
 </div>
 
 # PHP en MySQL Cheat Sheet

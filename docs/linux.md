@@ -1,5 +1,5 @@
-<div class="sdcs-header">
-  <img src="/assets/images/Tux.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/Tux.png)
 </div>
 
 # Linux Cheat Sheet
