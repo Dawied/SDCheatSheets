@@ -1,0 +1,9 @@
+<p align="center">
+  <img src="/assets/images/CheatSheets-logo.jpeg" style="border-radius: 50px">
+</p>
+
+# Welkom bij de SD Cheat Sheets
+
+Hier vind je handige Cheat Sheets over Software Development om je geheugen mee op te frissen.
+
+Gebruik de Cheat Sheets om snel even na te lezen hoe je iets ook alweer doet. Vaak krijg je korte code snippets te zien die je direct kunt gebruiken in je eigen code.

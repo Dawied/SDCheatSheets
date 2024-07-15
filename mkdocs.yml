@@ -1,0 +1,61 @@
+site_name: SD Cheat Sheets
+nav:
+  - Home: index.md
+  - Cheat Sheets:
+    - HTML: html.md
+    - CSS: css.md
+    - PHP: php.md
+    - PHP en MySQL: phpenmysql.md
+    - JavaScript: javascript.md
+    - Linux: linux.md
+    - Editors: editors.md
+  - Tutorials:
+    - Basis Programmeren: basis-programmeren.md
+
+theme: 
+  name: material
+  logo: assets/logo.png
+  language: nl
+  font:
+    text: Segoe UI
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.sections
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: deep orange
+      scheme: default 
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: deep orange
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets: 
+      base_path: docs
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html      
+  - pymdownx.superfences   
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+extra:
+  generator: false
+extra_css:
+  - stylesheets/sdcheatsheets.css  
