@@ -1,5 +1,5 @@
-<div class="sdcs-header">
-  <img src="/assets/images/basis-programmeren-logo.png">
+<div class="sdcs-header" markdown>
+  ![](assets/images/basis-programmeren-logo.png)
 </div>
 
 # Basis Programmeren Tutorial

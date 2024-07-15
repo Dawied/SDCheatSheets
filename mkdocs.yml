@@ -1,5 +1,4 @@
 site_name: SD Cheat Sheets
-site_url: https://dawied.github.io/SDCheatSheets/
 nav:
   - Home: index.md
   - Cheat Sheets:
@@ -51,7 +50,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - md_in_html      
+  - md_in_html
+  - attr_list      
   - pymdownx.superfences   
   - pymdownx.tabbed:
       alternate_style: true
