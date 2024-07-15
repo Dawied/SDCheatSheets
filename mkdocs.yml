@@ -1,5 +1,5 @@
 site_name: SD Cheat Sheets
-site_url: https://dawied.github.io/SDCheatSheets
+site_url: https://dawied.github.io/SDCheatSheets/
 nav:
   - Home: index.md
   - Cheat Sheets:
