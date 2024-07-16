@@ -15,7 +15,7 @@ De basis van elke programmeertaal bestaat uit maar een paar dingen. En omdat pro
 
 Deze elementen komen in elke taal terug!
 
-De enige manier om te leren programmeren is door programma's te schrijven. Maar welke taal moet je kiezen om mee te starten? In deze Cheat Sheet wordt JavaScript gebruikt.
+De enige manier om te leren programmeren is door programma's te schrijven. Maar welke taal moet je kiezen om mee te starten? In deze Tutorial wordt voornamelijk JavaScript gebruikt en hier en daar krijg je ook alvast een inkijkje in hoe het in andere talen werk.
 
 ## Ontwikkelomgeving opzetten
 Om ons eerste programma in JavaScript te maken installeren we twee nieuwe programma's:
