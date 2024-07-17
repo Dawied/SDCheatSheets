@@ -208,7 +208,47 @@ Dat ziet er niet goed uit! Een loop brengt uitkomst. Je kan een **while loop** o
     ```
 
 Dat is beter! Het scheelt zelfs vijf regels code. De **for loop** is nog korter, drie regels code.
-Of je een for loop of een while loop gebruikt is afhankelijk van de situatie. Je kiest vaak een for loop als je van tevoren weet hoe vaak je wilt loopen. Als je niet weet hoe vaak je wilt herhalen, dan kies je de while loop. Verder doen ze allebei hetzelfde.
+Of je een for loop of een while loop gebruikt is afhankelijk van de situatie. 
+
+Je kiest vaak een for loop als je van tevoren weet hoe vaak je wilt loopen. En als je nog niet weet hoe vaak je wilt herhalen, dan kies je de while loop. Verder doen ze allebei hetzelfde.
+
+### De onderdelen van een while loop
+Allereerst moet je kunnen bijhouden hoe vaak de loop is uitgevoerd. Dit doe je met een variabele. Vaak noemen we deze variabele "i" (de "i" staat voor **i**teration, herhaling).
+
+Je hebt ook een expression nodig om te bepalen wanneer de loop moet stoppen
+
+Tenslotte heb je de body van de loop. In de body wordt het eigenlijke werk van de loop gedaan. In veel talen, en ook in JavaScript, staat de body van de loop tussen twee krulhaken.
+
+In de body kan je ook de teller ophogen, zodat je weet hoe vaak de loop is uitgevoerd.
+
+<p align="center" markdown>
+  ![](assets/images/while-loop.png)
+</p>
+
+### De onderdelen van een for loop
+Een for loop heeft dezelfde onderdelen als een while loop: een **teller**, een **expression** om aan te geven wanneer de loop stopt, een **ophoging** van de teller en natuurlijk een **body**.
+
+Alleen zijn de teller, de expression en de ophoging nu in 1 regel geschreven met puntkomma's ertussen:
+
+<p align="center" markdown>
+  ![](assets/images/for-loop.png)
+</p>
+
+!!! note "Stapgrootte veranderen"
+
+    Je bepaalt zelf hoe vaak de loop loopt. In de bovenste voorbeelden is dat honderd keer. 
+    
+    De teller begint bij 0 (let i = 0) en eindigt bij 99 (want de expression zegt i < 100). En de teller wordt elke keer met 1 opgehoogd. 
+    
+    Maar je kan dit ook veranderen. Je bepaalt zelf waar de teller begint en ook met hoeveel de teller elke keer wordt opgehoogd.
+
+    De onderstaande loop begint bij 10, loopt door tot en met 100, in stapjes van 10:
+
+    ```
+    for (let i = 10; i <= 100; i+=10) {
+      // do something great
+    }
+    ```
 
 
 
