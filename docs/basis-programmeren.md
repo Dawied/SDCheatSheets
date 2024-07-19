@@ -474,9 +474,9 @@ let randomAnswer = Math.floor(Math.random() * 5);
 
 :man_technologist:{ .big-emoji }
 
-Weet jij nu hoe je de code moet aanpassen om de chatbot een willekeurig antwoord te laten geven? Gebruik de bovenstaande informatie om het eerst zelf te proberen. Kijk daarna pas naar de voorbeeldcode.
+Weet jij nu hoe je de code moet aanpassen om de chatbot een willekeurig antwoord te laten geven? Gebruik de bovenstaande informatie om het eerst zelf te proberen. Kijk daarna pas naar de uitgewerkte code.
 
-??? Voorbeeldcode
+??? eye "Uitgewerkte code"
 
     ```javascript
     const prompt = require('prompt-sync')();
