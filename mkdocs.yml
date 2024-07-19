@@ -56,6 +56,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
+  - pymdownx.details
 extra:
   generator: false
 extra_css:

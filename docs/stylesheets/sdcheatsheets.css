@@ -18,3 +18,10 @@ h1 {
   font-size: 2.5em!important;
   text-align: center;
 }
+
+.img-left img {
+  display: block;
+  margin-left: auto;
+  margin-right: 30px;
+  float: left;
+}
