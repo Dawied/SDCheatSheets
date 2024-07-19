@@ -15,6 +15,7 @@ nav:
 theme: 
   name: material
   logo: assets/logo.png
+  favicon: assets/icons/note-search-blue-16.png
   language: nl
   font:
     text: Segoe UI
