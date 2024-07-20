@@ -27,7 +27,7 @@ In dat stukje geheugen kan je een waarde opslaan. Je kan tekst opslaan maar ook 
 
 In php herken je een variabele omdat er altijd het dollarteken “$” voor staat. Bijvoorbeeld: $variabele1, $variabele2, $auto_merk, etc.
 
-Je geeft een variabele een waarde door er het “=” teken achter te zetten gevolgd door een waarde:
+Je geeft een variabele een waarde door er het “=” teken er achter te zetten gevolgd door een waarde:
 
 ```
 $var1 = "Mercedes";
