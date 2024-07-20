@@ -31,11 +31,7 @@ Je geeft een variabele een waarde door er het “=” teken achter te zetten gev
 
 ```
 $var1 = "Mercedes";
-<p>
 $var2 = 100000;
-   </td>
-  </tr>
-</table>
 ```
 
 ## Arrays
