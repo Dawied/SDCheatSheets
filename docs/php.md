@@ -10,12 +10,12 @@ PHP is een scripttaal die gebruikt wordt om dynamische website te bouwen. Vroege
 ## Bronnen
 Buiten deze Cheat Sheet om zijn hier nog een paar interessante sites met informatie over PHP
 
-|Site|Beschrijving|
-|---|---|
-|<a href="https://www.w3schools.com/php/default.asp">w3schools PHP Tutorial</a>|Veel voorbeelden en een mooie tryit editor om code uit te proberen.|
-|<a href="https://www.codecademy.com/resources/docs/php">Codecademy</a>|Alles over PHP ingedeeld in categoriën. Begrijpelijke taal|
-|<a href="https://www.php.net/manual/en/index.php">Officiële PHP documentie</a>|Technisch maar compleet. Vaak met voorbeelden van gebruikers|
-|<a href="https://phptherightway.com/">PHP The Right Way</a>|Compleet, maar nogal technisch. Uitgebreide voorbeeldcode|
+| Site                                                                           | Beschrijving                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| <a href="https://www.w3schools.com/php/default.asp">w3schools PHP Tutorial</a> | Veel voorbeelden en een mooie tryit editor om code uit te proberen. |
+| <a href="https://www.codecademy.com/resources/docs/php">Codecademy</a>         | Alles over PHP ingedeeld in categoriën. Begrijpelijke taal          |
+| <a href="https://www.php.net/manual/en/index.php">Officiële PHP documentie</a> | Technisch maar compleet. Vaak met voorbeelden van gebruikers        |
+| <a href="https://phptherightway.com/">PHP The Right Way</a>                    | Compleet, maar nogal technisch. Uitgebreide voorbeeldcode           |
 
 Als je voorbeeld code uit deze cheat sheet snel wilt uitproberen gebruik dan de <a href="https://www.w3schools.com/php/phptryit.asp?filename=tryphp_intro">TryIt editor van W3Schools</a>.
 
@@ -232,4 +232,107 @@ Je kan een ander PHP bestand invoegen met include
    include("dbcode.php"); // de code in dbcode.php wordt ingevoegd
 
    // overige code
+```
+
+## HTML genereren
+Met PHP kan je HTML genereren. Zo maak je een webpagina dynamisch.
+
+Het komt bijvoorbeeld regelmatig voor dat je een lijst met gegevens wilt laten zien. De gegevens kunnen uit een database komen of ze kunnen een statische lijst in je code zijn.
+
+We tonen een paar veelvoorkomende situaties.
+
+Als je de code in werking wilt zien, kopieer je de code en plak je die in de <a href="https://www.w3schools.com/php/phptryit.asp?filename=tryphp_intro">W3Schools TryIt editor</a>
+
+### De waarde van een input vullen
+```php
+<?php
+$adres = "Willemskade 23";
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" value="<?php echo $adres ?>" >
+
+<!-- zelfde maar nu met een short-hand echo tag -->
+<input type="text" value="<?= $adres ?>" >
+
+</body>
+</html>
+```
+*De short-hand echo tag `<?=` is een kortere manier om `<?php echo` te schrijven*
+
+### Een table maken
+```php
+<?php
+$data = array(
+    array("Name" => "Wytse Bergsma", "StudentId" => 12225, "Grade" => 10),
+    array("Name" => "Arne Woudsma", "StudentId" => 12230, "Grade" => 7),
+    array("Name" => "Sofia Douma", "StudentId" => 12222, "Grade" => 9)
+);
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <table border="1">
+        <tr>
+            <th>Naam</th>
+            <th>Id</th>
+            <th>Cijfer</th>
+        </tr>
+        <?php foreach($data as $row): ?>
+            <tr>
+                <td><?php echo $row['Name']; ?></td>
+                <td><?php echo $row['StudentId']; ?></td>
+                <td><?php echo $row['Grade']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+</html>
+```
+
+### Een dropdown box vullen met opties
+```php
+<?php
+$shoeTypes = array("Bergschoenen", "Herenschoenen", "Pumps", "Sneakers", "Sandalen");
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <select name="schoe-type">
+        <?php foreach($shoeTypes as $shoeType): ?>
+            <option value="<?php echo $shoeType; ?>"><?php echo $shoeType; ?></option>
+        <?php endforeach; ?>
+    </select>
+</body>
+</html>
+```
+
+### Een navigatie menu maken
+
+```php
+<?php
+$menu = array(
+    "Home" => "index.php",
+    "Products" => "products.php",
+    "Contact" => "contact.php"
+);
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <nav>
+        <ul>
+            <?php foreach($menu as $title => $link): ?>
+                <li><a href="<?php echo $link; ?>"><?php echo $title; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+</body>
+</html>
 ```
