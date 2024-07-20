@@ -4,10 +4,23 @@
 
 # PHP Cheat Sheet
 
+## PHP
+PHP is een scripttaal die gebruikt wordt om dynamische website te bouwen. Vroeger stond de afkorting voor "Personal Home Page", tegenwoordig voor "PHP Hypertext Preprocessor". PHP bestaat sinds 1994 en wordt sindsdien actief doorontwikkeld.
+
+## Bronnen
+Buiten deze Cheat Sheet om zijn hier nog een paar interessante sites met informatie over PHP
+
+|Site|Beschrijving|
+|---|---|
+|<a href="https://www.w3schools.com/php/default.asp">w3schools PHP Tutorial</a>|Veel voorbeelden en een mooie tryit editor om code uit te proberen.|
+|<a href="https://www.codecademy.com/resources/docs/php">Codecademy</a>|Alles over PHP ingedeeld in categoriën. Begrijpelijke taal|
+|<a href="https://www.php.net/manual/en/index.php">Officiële PHP documentie</a>|Technisch maar compleet. Vaak met voorbeelden van gebruikers|
+|<a href="https://phptherightway.com/">PHP The Right Way</a>|Compleet, maar nogal technisch. Uitgebreide voorbeeldcode|
+
+Als je voorbeeld code uit deze cheat sheet snel wilt uitproberen gebruik dan de <a href="https://www.w3schools.com/php/phptryit.asp?filename=tryphp_intro">TryIt editor van W3Schools</a>.
+
 
 ## Variabelen
-
-
 Een variabele is een stukje geheugen in je programma met een naam. 
 
 In dat stukje geheugen kan je een waarde opslaan. Je kan tekst opslaan maar ook getallen en datums. 
@@ -25,10 +38,7 @@ $var2 = 100000;
 </table>
 ```
 
-
 ## Arrays
-
-
 Arrays zijn variabelen waar meerdere waarden in kunnen worden opgeslagen. Je kan een array vergelijken met een ladekast. In elk laatje kan je iets stoppen, een waarde. De laatjes hebben nummers die beginnen bij 0:
 
 In PHP maak je een array op de volgende manier:
@@ -39,80 +49,70 @@ $cars = array("Volvo", "BMW", "Toyota");
 
 Nu heb je een array met de naam $cars. Er zitten drie elementen in. Op plek 0 zit “Volvo”, op plek 1 zit “BMW” en op plek 2 zit “Toyota”.
 
+Als je iets uit de array wilt halen gebruik je de blokhaken met de index van het element dat je nodig hebt:
 
-## De ternary operator (?)
+```
+$myCar = $cars[2];
+echo $myCar;
+```
 
+### Associative arrays
+Elk element in een standaard array heeft een index. Die index begint bij 0. 
 
-<table>
-  <tr>
-   <td>
-<h3>Gewone if-else:</h3>
+Je hebt behalve de standaard arrays in PHP ook de beschikking over een **associative array**. Bij een associative array kan je een eigen **key** als index opgeven.
 
-<code>$naam = "Wim";</code>
-<p>
-<code>if ($naam == "Wim") {</code>
-<p>
-<code>    $isWim = true;</code>
-<p>
-<code>} else {</code>
-<p>
-<code>    $isWim = false;</code>
-<p>
-<code>}</code>
-   </td>
-   <td>
-<h3>Herschreven met ternary operator:</h3>
+```
+$studenten = array(1010001 => "Jelle van Eijk", 1010002 => "Els ten Brugge", 1010003 => "Mark Hoogland");
+echo $studenten[1010002];
+```
 
-<code>$isWim = ($naam == "Wim") ? true : false;</code>
-<h3>Nog korter:</h3>
+De key in een associative array kan een nummer of een string zijn.
 
 
-<p>
-<code>$isWim = ($naam == "Wim");</code>
-   </td>
-  </tr>
-</table>
+## Loops
+PHP heeft drie verschillende soorten loops. Hieronder staan voorbeelden van alledrie. 
 
+### while loop
+```
+$cars = array("Volvo", "BMW", "Toyota");
+$i = 0;
 
+while ($i < count($cars)) {
+    echo $cars[$i] . "<br>";
+    $i++;
+}
+```
 
-## Forms en inputs &lt;form>&lt;/form>
+### for loop
+```
+$cars = array("Volvo", "BMW", "Toyota");
 
+for ($i = 0; $i < count($cars); $i++) {
+    echo $cars[$i] . "<br>";
+}
+```
 
-<table>
-  <tr>
-   <td><strong>index.html</strong>
-<p>
-<code>&lt;form action="process.php" method="post"></code>
-<p>
-<code>    &lt;input type="text" name="voornaam"></code>
-<p>
-<code>    &lt;input type="text" name="achternaam"></code>
-<p>
-<code>    &lt;input type="submit" value="Versturen"></code>
-<p>
-<code>&lt;/form></code>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>process.php</strong>
-<p>
-<code>&lt;?php</code>
-<p>
-<code>$voornaam = empty($_POST["voornaam"]) ? "onbekend" : $_POST["voornaam"];</code>
-<p>
-<code>$achternaam = empty($_POST["achternaam"]) ? "onbekend" : $_POST["achternaam"];</code>
-<p>
-<code>echo "Voornaam: " . $voornaam . "&lt;br>"</code>
-<p>
-<code>echo "Achternaam: " . $achternaam;</code>
-   </td>
-  </tr>
-</table>
+### foreach loop (meest gebruikt voor arrays)
+De foreach loop heeft twee vormen, de eerste gebruikt alleen de waarden in de array, de tweede vorm haalt ook de keys op
 
+=== "Alleen waarden"
+    ```
+    $cars = array("Volvo", "BMW", "Toyota");
+
+    foreach ($cars as $car) {
+        echo $car . "<br>";
+    }
+    ```
+=== "Waarden en Keys"
+    ```
+    $cars = array("Volvo", "BMW", "Toyota");
+
+    foreach ($cars as $key => $car) {
+        echo "$key: $car" . "<br>";
+    }
+    ```
 
 ## if-elseif-else
-
-
 ```
 $uur = 14;
 if ($uur <= 12) {
@@ -123,12 +123,28 @@ if ($uur <= 12) {
    $dagdeel = "avond";
 }
 echo $dagdeel;
-
 ```
 
+## De ternary operator (?)
+Met de ternary operator "?" kan je op één regel een volledig if-else statement schrijven.
+
+**Een gewone if-else:**
+```php
+$naam = "Wim";
+if ($naam == "Wim") {
+  $isWim = true;
+} else {
+  $isWim = false;
+}
+```
+
+**Dezelfde if-else maar nu met de ternary operator:**
+
+```
+$isWim = ($naam == "Wim") ? true : false;
+```
 
 ## functies
-
 Functies zijn blokjes code. Je kan functies gebruiken om dezelfde code maar 1x te schrijven en daarna vanuit andere code te gebruiken, 'aan te roepen'.
 
 Je kan gegevens aan functies meegeven. Dat noemen we parameters. De parameters staan tussen de haakjes achter de functienaam. Als je meer parameters nodig hebt zet je een komma tussen elke parameter.
@@ -149,8 +165,6 @@ function dagdeel($uur) {
 }
 ```
 
-
-
 ## Samenvoegen van tekst (.)
 Aan elkaar plakken van stukjes tekst doe je met de punt ".".
 ```
@@ -159,15 +173,36 @@ $melding = "fout: " . $error;
 echo $melding;
 ```
 
-## Naar een andere pagina gaan (redirect)
+## Forms en inputs <form\></form\>
+Een voorbeeld van een eenvoudig form met bijbehorende php bestand om de input te verwerken.
 
+``` py title="index.html"
+<form action="process.php" method="POST">
+  <input type="text" name="voornaam">
+  <input type="text" name="achternaam">
+
+  <input type="submit" value="Versturen">
+</form>
+```
+
+```py title="process.php"
+<?php
+
+$voornaam = empty($_POST["voornaam"]) ? "onbekend" : $_POST["voornaam"];
+$achternaam = empty($_POST["achternaam"]) ? "onbekend" : $_POST["achternaam"];
+
+echo "Voornaam: " . $voornaam . "<br>"
+echo "Achternaam: " . $achternaam;
+```
+
+
+## Naar een andere pagina gaan (redirect)
 Je kan vanuit een PHP programma de gebruiker naar een andere pagina sturen met een redirect:
 ```
 header("Location: index.php");
 ```
 
 ## Fouten in code afvangen
-
 Je kan in PHP stukjes code tegen fouten beschermen met try - catch
 
 ```
@@ -179,7 +214,6 @@ try {
 ```
 
 ## Code invoegen (include)
-
 Je kan een ander PHP bestand invoegen met include
 
 ```

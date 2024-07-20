@@ -24,6 +24,9 @@ De volgende sites geven uitgebreide informatie over CSS:
 |<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla Developer Network</a>|De autoriteit voor web development. Zakelijk, maar je weet zeker dat je goed zit|
 |<a href="https://templated.live/">TEMPLATED</a>|Een verzameling van html/css templates om inspiratie op te doen|
 
+Als je voorbeeld code uit deze cheat sheet snel wilt uitproberen gebruik dan de <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default">TryIt editor van W3Schools</a>.
+
+
 ## inline styles vs externe stylesheets
 CSS styles kunnen **inline** gebruikt worden of als externe stylesheets
 
@@ -155,7 +158,7 @@ Als je **!important** achter een style zet dan overschrijft die style alle ander
 ```
 De height en width zullen nu altijd 100px zijn, ongeacht wat andere styles definiëren.
 
-## inherritance
+## inheritance
 Sommige style properties werken door naar van parent- naar child elements. Een parent is bijvoorbeeld een <div\> element, en een child is de tekst in die <div\>
 
 ```html
