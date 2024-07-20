@@ -144,12 +144,30 @@ if ($naam == "Wim") {
 $isWim = ($naam == "Wim") ? true : false;
 ```
 
+## Samenvoegen van tekst (.)
+Aan elkaar plakken van stukjes tekst doe je met de punt ".".
+```
+$error = "fout bij verwerken van het form";
+$melding = "fout: " . $error;
+echo $melding;
+```
+
+Je kan dit ook nog op een andere (betere) manier doen:
+```
+$error = "fout bij verwerken van het form";
+$melding = "fout: $error";
+echo $melding;
+```
+*De laatste manier kan je alleen gebruiken met string tussen dubbele aanhalingstekens!*
+
+Welke manier je gebruikt hangt af van de situatie en je kiest elke keer de meest geschikte methode, met de voorkeur voor de laatste manier.
+
 ## functies
-Functies zijn blokjes code. Je kan functies gebruiken om dezelfde code maar 1x te schrijven en daarna vanuit andere code te gebruiken, 'aan te roepen'.
+Functies zijn blokjes code. Je kan functies gebruiken om je code overzichtelijk te maken en ook om dezelfde code maar 1x te schrijven.
 
-Je kan gegevens aan functies meegeven. Dat noemen we parameters. De parameters staan tussen de haakjes achter de functienaam. Als je meer parameters nodig hebt zet je een komma tussen elke parameter.
+Je kan gegevens aan functies meegeven. Dat noemen we **parameters**. De parameters staan tussen de haakjes achter de functienaam. Als je meer parameters nodig hebt zet je een komma tussen elke parameter.
 
-Een functie kan ook een waarde teruggeven. Dit doe je met 'return'.
+Een functie kan ook een waarde **teruggeven**. Dit doe je met 'return'. De waarde die wordt teruggegeven noemen we de **return value**.
 ```
 echo dagdeel(14);
 
@@ -164,14 +182,7 @@ function dagdeel($uur) {
     return $dagdeel;
 }
 ```
-
-## Samenvoegen van tekst (.)
-Aan elkaar plakken van stukjes tekst doe je met de punt ".".
-```
-$error = "fout bij verwerken van het form";
-$melding = "fout: " . $error;
-echo $melding;
-```
+In dit voorbeeld is $uur een parameter en de functie geeft de waarde van de variabele $dagdeel terug.
 
 ## Forms en inputs <form\></form\>
 Een voorbeeld van een eenvoudig form met bijbehorende php bestand om de input te verwerken.
