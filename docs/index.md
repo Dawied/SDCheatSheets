@@ -2,7 +2,7 @@
   ![](assets/images/cheatsheets-logo.png)
 </p>
 
-# Welkom bij de SD Cheat Sheets
+# Welkom bij SD Cheat Sheets
 
 Hier vind je handige Cheat Sheets en Tutorials over Software Development om je geheugen mee op te frissen.
 
