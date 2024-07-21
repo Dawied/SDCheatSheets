@@ -1,0 +1,25 @@
+* {
+  font-family: Verdana;
+}
+
+p {
+  color: blue;
+  font-size: 30px;
+}
+
+div {
+  color: white;
+}
+
+#blue-box {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
+
+.red-box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+

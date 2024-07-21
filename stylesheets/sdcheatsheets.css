@@ -1,0 +1,48 @@
+.sdcs-header {
+  text-align: center;
+}
+
+.sdcs-header img {
+  max-height: 128px;
+}
+
+.big-emoji {
+  font-size: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600!important;
+}
+
+h1 {
+  font-size: 2.5em!important;
+  text-align: center;
+}
+
+.img-left img {
+  display: block;
+  margin-left: auto;
+  margin-right: 30px;
+  float: left;
+}
+
+/*
+ * Custom admonition eye
+ */
+:root {
+  --md-admonition-icon--eye: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>')
+}
+.md-typeset .admonition.eye,
+.md-typeset details.eye {
+  border-color: rgb(43, 155, 70);
+}
+.md-typeset .eye > .admonition-title,
+.md-typeset .eye > summary {
+  background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .eye > .admonition-title::before,
+.md-typeset .eye > summary::before {
+  background-color: rgb(43, 155, 70);
+  -webkit-mask-image: var(--md-admonition-icon--eye);
+          mask-image: var(--md-admonition-icon--eye);
+}

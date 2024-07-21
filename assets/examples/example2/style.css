@@ -1,0 +1,12 @@
+p {
+  color: blue;
+}
+
+.my-p-style {
+  color: red;
+}
+
+#my-p-style {
+  color: green;
+  font-size: 10px;
+}
