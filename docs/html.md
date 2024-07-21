@@ -100,14 +100,6 @@ Lorem ipsum is een een tekst die gebruikt wordt als placeholder voor echte tekst
 
 Visual Studio Code heeft een ingebouwde Lorem ipsum generator. Type "Lorem" en Enter en je krijg een lange onzin tekst.
 
-## Paragrafen
-Het **<p\>** element maakt een paragraaf van je tekst. Boven en onder de paragraaf wordt witruimte overgelaten.
-```
-<p>
-Lorem ipsum dolor sit amet
-</p>
-```
-
 ## Kopjes (Headings)
 Om een koptekst te maken gebruik je de **<h1\>** tot en met de **<h6\>** tags. <h1\> is de grootste kop en <h6\> de kleinste.
 
@@ -120,4 +112,29 @@ Om een koptekst te maken gebruik je de **<h1\>** tot en met de **<h6\>** tags. <
 
 <h3>Werkervaring</h3>
 <p>Lorem ipsum dolor sit amet</p>
+```
+
+## Paragrafen
+Het **<p\>** element maakt een paragraaf van je tekst. Boven en onder de paragraaf wordt witruimte overgelaten.
+```
+<p>
+Lorem ipsum dolor sit amet
+</p>
+```
+
+## Div
+Het <div\> element wordt vaak gebruikt om andere elementen in te zetten, als een container. Je kan het div element dan stylen om bijvoorbeeld een kader toe te voegen. 
+
+De <p\> en de <div\> zien er hetzelfde uit als je er tekst in zet. Het verschil is dat je in een <p\> meestal alleen tekst zet en in een <div\> ook vaak andere elementen.
+
+divs nemen standaard de volle breedte van de pagina in. Er zit een lege regel aan de boven- en onderkant.
+
+```html
+<h1>Wobbuffet</h1>
+
+<p>Wobbuffet is een Psychic Pokemon. Hij is kwetsbaar voor Bug, Ghost en Dark.</p>
+
+<div class="note">
+  Wobbuffet heeft een zwarte staart. Er schijnt een geheim achter te schuilen.
+</div>
 ```
