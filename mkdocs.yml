@@ -6,6 +6,7 @@ nav:
     - CSS: css.md
     - PHP: php.md
     - PHP en MySQL: phpenmysql.md
+    - Laravel: laravel.md
     #- JavaScript: javascript.md
     - Linux: linux.md
     - Editors: editors.md
