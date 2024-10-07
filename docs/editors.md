@@ -99,6 +99,7 @@ ddkP
    <td>
    </td>
    <td>
+   Ctrl+L
    </td>
    <td>Ctrl+L
    </td>
