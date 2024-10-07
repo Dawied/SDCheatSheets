@@ -162,7 +162,7 @@ ddkP
    </td>
    <td>Ctrl+R;Ctrl+R
    </td>
-   <td>
+   <td>F2
    </td>
    <td>
    </td>
