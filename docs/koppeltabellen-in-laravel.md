@@ -59,8 +59,7 @@ php artisan migrate
 
 Bij de vraag of je de database wilt aanmaken, kies je voor **yes** 
 
-Run nu het commando:
-
+Het starter project heeft een handige set met testdata, run:
 ```
 php artisan db:seed
 ```
@@ -300,7 +299,7 @@ Als de gebruiker een Hero verwijderd dan verwijderen we ook de links met Abiliti
 
 Pas de migration van de ability_hero tabel aan:
 
-``` hl_lines="5 6"
+``` php-inline hl_lines="5 6"
 public function up(): void
 {
     Schema::create('ability_hero', function (Blueprint $table) {
@@ -352,7 +351,7 @@ Je moet in de destroy() functie in de AbilityController zijn. Hier zouden we de 
 
 Controleer eerst of de ability nog gebruikt worden, zoja, geef een melding aan de gebruiker:
 
-``` php hl_lines="3-6"
+``` php-inline hl_lines="3-6"
 public function destroy(Ability $ability)
 {
     $exists = AbilityHero::where('ability_id', $ability->id)->exists();
