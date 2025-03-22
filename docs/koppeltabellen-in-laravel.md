@@ -347,7 +347,7 @@ De cascade delete werkt. Als een Hero wordt verwijderd dan worden automatisch de
 
 Blijft over de lelijke foutmelding als we een gelinkte Ability proberen te verwijderen. Die gaan we vervangen met een nette melding voor de gebruiker.
 
-Je moet in de destroy() functie in de AbilityController zijn. Hier zouden we de $ability->delete() in een try-catch kunnen zetten en een foutmelding geven als de catch afgaat. Maar, je kan ook eerst controleren of er nog gebruikt wordt gemaakt van de Ability. Die laatste optie kiezen we hier, 'voorkomen is beter dan genezen'.
+Je moet in de destroy() functie in de AbilityController zijn. Hier zouden we de $ability->delete() in een try-catch kunnen zetten en een foutmelding geven als de catch afgaat. Maar, je kan ook eerst controleren of er nog gebruikt wordt gemaakt van de Ability. Die laatste optie kiezen we hier, *'voorkomen is beter dan genezen'*.
 
 Controleer eerst of de ability nog gebruikt worden, zoja, geef een melding aan de gebruiker:
 
