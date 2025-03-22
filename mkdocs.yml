@@ -12,6 +12,7 @@ nav:
     - Editors: editors.md
   - Tutorials:
     - Basis Programmeren: basis-programmeren.md
+    - Koppeltabellen in Laravel: koppeltabellen-in-laravel.md
 
 theme: 
   name: material
