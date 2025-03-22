@@ -1,5 +1,5 @@
 <div class="sdcs-header" markdown>
-  ![](assets/images/Laravel-tutorial-logo.png)
+  ![](assets/images/koppeltabellen-logo.png)
 </div>
 
 # Koppeltabellen in Laravel
@@ -107,7 +107,7 @@ php artisan make:migration create_ability_hero
 
 Open de nieuwe aangemaakte migration in de editor en voeg de hero_id en ability_id toe als foreignId's:
 
-``` php
+``` php-inline
 public function up(): void
 {
     Schema::create('ability_hero', function (Blueprint $table) {
@@ -133,7 +133,7 @@ In het Hero model maken we de relatie voor de many-to-many relatie tussen heroes
 
 Voeg de volgende functie toe:
 
-``` php
+``` php-inline
 public function abilities()
 {
   return $this->belongsToMany('abilities');
@@ -148,7 +148,7 @@ Maak een nieuw bestand in resources/views/heroes en noem het bestand **abilities
 
 Voeg de onderstaande code toe aan het bestand:
 
-``` php
+``` php-inline
 <label>Abilities</label>
 <table class="table">
     <tbody>
@@ -177,7 +177,7 @@ Deze twee variabelen moeten we vanuit de controller meegeven aan de create View 
 
 Pas in de HeroController eerst de functie create() aan. We halen alle abilities op. Voor de lijst met gelinkte abilities gebruiken we een lege Collection omdat we een nieuwe Hero aanmaken en er dus nog geen gelinkte abilities zijn. We geven de variabelen mee aan de view.
 
-``` php hl_lines="3 4"
+``` php-inline hl_lines="3 4"
 public function create()
 {
   $abilities = Ability::all();
@@ -189,7 +189,7 @@ public function create()
 
 Pas in de HeroController de functie edit() aan. We halen alle abilities op. Voor de lijst met gelinkte abilities halen we de gelinkte abilities op. We geven de variabelen mee aan de view.
 
-``` php hl_lines="3 4"
+``` php-inline hl_lines="3 4"
 public function edit(Hero $hero)
 {
     $abilities = Ability::all();
@@ -203,7 +203,7 @@ public function edit(Hero $hero)
 
 Nu includen we de nieuwe View in de create en edit views van heroes:
 
-``` php hl_lines="8 9"
+``` php-inline hl_lines="8 9"
 <form action="{{ route('heroes.store') }}" method="POST">
     @csrf
     <div class="form-group">
@@ -218,7 +218,7 @@ Nu includen we de nieuwe View in de create en edit views van heroes:
 </form>
 ```
 
-``` php hl_lines="9 10"
+``` php-inline hl_lines="9 10"
 <form action="{{ route('heroes.update', $hero->id) }}" method="POST">
     @csrf
     @method('PUT')
@@ -245,7 +245,7 @@ Sync en Attach werken met een array van id's, in ons geval dus de linkedAbilitie
 
 Pas de store() in de HeroController aan en voeg een attach() toe:
 
-``` php hl_lines="9"
+``` php-inline hl_lines="9"
 public function store(Request $request)
 {
     $request->validate([
@@ -262,7 +262,7 @@ public function store(Request $request)
 
 pas ook de update() in de HeroController aan en voeg een sync() toe:
 
-``` php hl_lines="9"
+``` php-inline hl_lines="9"
 public function update(Request $request, Hero $hero)
 {
     $request->validate([
@@ -369,7 +369,7 @@ public function destroy(Ability $ability)
 
 En in de index.blade.php van abilities voeg je code toe om de melding te laten zien:
 
-``` php
+``` php-inline
 @if(session('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
