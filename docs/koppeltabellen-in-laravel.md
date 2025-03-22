@@ -291,7 +291,7 @@ Als een Hero gelinkt is aan een Ability, en je verwijderd die Ability dan blijft
 
 En als je een Hero verwijderd die links had met Abilities dan blijven die links ook bestaan in de database.
 
-Per applicatie moet je zelf bepalen wat gewenst is. In het geval van onze Heroes en Ability is het volgende logisch:
+Per applicatie moet je zelf bepalen wat gewenst is. In het geval van onze Heroes en Abilities is het volgende logisch:
 
 Als de gebruiker een Ability probeert te verwijderen die nog gelinkt is aan een Hero dan staan we dat niet toe. De gebruiker krijgt een foutmelding die uitlegt dat de Ability nog niet verwijderd kan worden omdat die nog gebruikt wordt. Dit doen we met een **restrict delete** in de database.
 
@@ -304,7 +304,7 @@ public function up(): void
 {
     Schema::create('ability_hero', function (Blueprint $table) {
         $table->id();
-        $table->foreignId('hero_id')->constrained()->onDelete('cascade');;
+        $table->foreignId('hero_id')->constrained()->onDelete('cascade');
         $table->foreignId('ability_id')->constrained()->onDelete('restrict');
         $table->timestamps();
     });
@@ -325,7 +325,7 @@ php artisan db:seed
 
 Nu gaan we goed testen:
 
-### Test 1 - restrict delete ability
+### Test 1 - restrict delete Ability
 
 1. Koppel een Ability aan een Hero
 2. Check in de tabel ability_hero dat de link is aangemaakt
@@ -334,12 +334,12 @@ Nu gaan we goed testen:
 
 De restrict delete werkt, de Ability kan niet verwijderd worden als die gebruikt wordt in een link met een Hero. De foutmelding is niet netjes, maar dat lossen we straks op.
 
-### Test 2 - cascade delete hero
+### Test 2 - cascade delete Hero
 
 1. Koppel een Ability aan een Hero
 2. Check in de tabel ability_hero dat de link is aangemaakt
 3. Verwijder de Hero, er hoort geen foutmelding te komen
-4. Check in de tabel ability_hero dat de link is verwijder
+4. Check in de tabel ability_hero dat de link is verwijderd
 
 De cascade delete werkt. Als een Hero wordt verwijderd dan worden automatisch de gelinkte abilities uit de koppeltabel verwijderd.
 
@@ -349,7 +349,7 @@ Blijft over de lelijke foutmelding als we een gelinkte Ability proberen te verwi
 
 Je moet in de destroy() functie in de AbilityController zijn. Hier zouden we de $ability->delete() in een try-catch kunnen zetten en een foutmelding geven als de catch afgaat. Maar, je kan ook eerst controleren of er nog gebruikt wordt gemaakt van de Ability. Die laatste optie kiezen we hier, *'voorkomen is beter dan genezen'*.
 
-Controleer eerst of de ability nog gebruikt worden, zoja, geef een melding aan de gebruiker:
+Controleer eerst of de ability nog gebruikt wordt, zoja, geef een melding aan de gebruiker:
 
 ``` php-inline hl_lines="3-6"
 public function destroy(Ability $ability)
@@ -383,6 +383,6 @@ En in de index.blade.php van abilities voeg je code toe om de melding te laten z
 ```    
 
 ## DONE
-Het zit erop. Hopelijk kan je dit voorbeeld goed gebruiken om in je eigen applicaties koppeltabellen te gebruiken. 
+Het zit erop. Hopelijk kan je dit voorbeeld goed gebruiken om in je eigen applicaties koppeltabellen te implementeren. 
 
 **Bedankt voor je aandacht en happy coding!**
