@@ -97,7 +97,7 @@ Je ziet dat er tussen de heroes en de abilities een nieuwe tabel staat. Dit is d
     tabel **heroes** in enkelvoud is **hero**, **abilities** in enkelvoud is **ability**, in alfabetische volgorde wordt dit: **ability_hero**. 
 
 !!! note "Zelf een databasemodel ontwerpen"
-    Het bovenstaande plaatje is gemaakt met de online tool <a target="_blank" href="https://dbdiagram.io">dbdiagram.io</a>. Deze tool laat je een database diagram maken door de definitie te beschrijven met **Database Markup Language (DBML)**. Het diagram hierboven is gemaakt met het volgende DMBL script:
+    Het bovenstaande plaatje is gemaakt met de online tool <a target="_blank" href="https://dbdiagram.io">dbdiagram.io</a>. Met deze tool kan je een database diagram maken met **Database Markup Language (DBML)**. Het diagram hierboven is gemaakt met het volgende DMBL script:
 
     ```
     Table heroes {
