@@ -96,6 +96,29 @@ Je ziet dat er tussen de heroes en de abilities een nieuwe tabel staat. Dit is d
 
     tabel **heroes** in enkelvoud is **hero**, **abilities** in enkelvoud is **ability**, in alfabetische volgorde wordt dit: **ability_hero**. 
 
+!!! note "Zelf een databasemodel ontwerpen"
+    Het bovenstaande plaatje is gemaakt met de online tool <a target="_blank" href="https://dbdiagram.io">dbdiagram.io</a>. Deze tool laat je een database diagram maken door de definitie te beschrijven met **Database Markup Language (DBML)**. Het diagram hierboven is gemaakt met het volgende DMBL script:
+
+    ```
+    Table heroes {
+      id int [primary key]
+      name varchar(200)
+      description text
+    }
+
+    Table abilities {
+      id int [primary key]
+      name varchar(200)
+      description text
+    }
+
+    Table ability_hero {
+      id int [primary key]
+      ability_id int [ref: > abilities.id]
+      hero_id int [ref: > heroes.id]
+    }
+    ```
+
 
 ## Migration voor de ability_hero tabel
 Maak de Laravel migration voor de ability_hero: 
