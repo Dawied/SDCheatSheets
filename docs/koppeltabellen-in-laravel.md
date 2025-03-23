@@ -38,7 +38,7 @@ composer install
 npm install
 ```
 
-Rename het bestand **example.env** naar **.env** en open het bestand in de editor. Pas de database gegevens aan zodat de applicatie kan inloggen in de database:
+Rename het bestand **.env.example** naar **.env** en open het bestand in de editor. Pas de database gegevens aan zodat de applicatie kan inloggen in de database:
 
 ```
 DB_USERNAME=jouw_username
