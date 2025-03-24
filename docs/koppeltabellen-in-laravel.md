@@ -141,6 +141,12 @@ public function up(): void
 }
 ```
 
+En voer de migration uit:
+
+```
+php artisan migrate
+```
+
 ## Model AbilityHero maken
 
 Maak het model AbilityHero:
@@ -158,7 +164,7 @@ Voeg de volgende functie toe:
 ``` php-inline
 public function abilities()
 {
-  return $this->belongsToMany('abilities');
+  return $this->belongsToMany(Ability::class);
 }
 ```
 ## Een View voor de koppeltabel maken
