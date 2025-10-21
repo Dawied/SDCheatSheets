@@ -8,47 +8,23 @@ Een Cheat Sheet met veelgebruikte commando's en tools in Linux
 
 Klik op de 'explainshell' links om uitvoerige informatie te krijgen over een commando
 
-## Packages installeren en beheren met apt
-De Advanced Package Tool, apt, bestaat uit een aantal tools waarmee je in Debian en Ubuntu packages/programma's kan installeren. Andere Linux distributies kunnen andere tools gebruiken. Vaak zie je nog tutorials waarin apt-get wordt gebruikt in plaats van apt. apt is de nieuwe versie van apt-get.
+## Basis commando's
 
-### Package database updaten
-```
-apt update
-```
-Hiermee haal je informatie op over de nieuwste versies van programma's
-
-### Nieuwe versie van package installeren
-```
-apt upgrade
-```
-Hiermee installeer je de nieuwste versies van programma's. Doe altijd eerst een apt-get update en daarna een apt-get upgrade
-
-### Nieuwe versie van Linux installeren
-```
-apt dist-upgrade
-```
-Hiermee installeer je de nieuwste versies van de distributie.
-
-### Een package installeren
-```
-apt install <package-name>
-```
-Met apt-get install installeer je een programma. Bijvoorbeeld de Midnight Commander:
-
-### Een package verwijderen
-```
-apt remove <package-name>
-```
-Verwijder de binaries van de package, maar niet de configuratie bestanden
-
-### Een package verwijderen en opschonen
-```
-apt purge <package-name>
-```
-Verwijder de binaries van de package en ook de bijbehorende configuratie bestanden
+### cd (change directory)
+Met het commando **cd** kan je navigeren in de directory structuur. De hoofdtak van de directory structuur wordt **root** genoemd.
 
 
-## ls (list)
+|commando|omschrijving|voorbeeld|
+|----|----|----|
+|cd <path\>|change directory naar <path\>|cd /var/log|
+|cd ..|ga 1 directory naar boven in de boom|cd ..|
+|cd /|change directory naar de root|cd /|
+|cd ~|change directory naar de home directory|cd ~|
+
+cd \<path>
+
+
+### ls (list)
 
 Het list commando ls geeft een lijst van de files in een directory. 
 
@@ -91,25 +67,7 @@ ls -ltr | head -10
 ```
 [explainshell](https://explainshell.com/explain?cmd=ls -ltr | head -10)
 
-## df (disk free)
-Het commando df, disk free, geeft een overzicht van disks en de gebruikte en vrije ruimte. 
-df kijk naar de gebruikte blocks op de disks. Met de switch -h toon je de grootte in MB en GB
-
-```
-df -h
-```
-
-## du (disk usage)
-Het commando du, disk usage, doorloopt de bestanden in een directory en toont de grootte van de bestanden. du telt geen hardlinks en geen bestanden waar je geen rechten voor voor hebt.
-
-Met de switch --max-depth kan je aangeven hoe diep je in de directory boom wilt zoeken. max-depth=1 zoekt alleen in de hoofd directory
-
-```
-du -h --max-depth=1
-```
-[explainshell](https://explainshell.com/explain?cmd=du -h --max-depth=1)
-
-## cat (concatenate)
+### cat (concatenate)
 Met het commando cat kan je de inhoud van bestanden tonen in de console. 
 
 ```
@@ -122,14 +80,14 @@ cat /proc/meminfo
 ```
 Toont het interne geheugengebruik
 
-## man (manual)
+### man (manual)
 Het commando man geeft informatie over een commando
 ```
 man cat
 ```
 Geeft uitgebreide informatie over het commando cat
 
-## grep (zoeken naar tekst in een bestand)
+### grep (zoeken naar tekst in een bestand)
 Met grep kan je zoeken naar tekst in bestanden. Het command print de regels waarin het gezochte woord voorkomt naar de console
 
 ```
@@ -137,7 +95,70 @@ grep 'minecraft' index.html
 ```
 Zoekt naar het woord minecraft in het bestand index.html
 
-## history
+
+
+## Packages installeren en beheren met apt
+De Advanced Package Tool, apt, bestaat uit een aantal tools waarmee je in Debian en Ubuntu packages/programma's kan installeren. Andere Linux distributies kunnen andere tools gebruiken. Vaak zie je nog tutorials waarin apt-get wordt gebruikt in plaats van apt. apt is de nieuwe versie van apt-get.
+
+### Package database updaten
+```
+apt update
+```
+Hiermee haal je informatie op over de nieuwste versies van programma's
+
+### Nieuwe versie van package installeren
+```
+apt upgrade
+```
+Hiermee installeer je de nieuwste versies van programma's. Doe altijd eerst een apt-get update en daarna een apt-get upgrade
+
+### Nieuwe versie van Linux installeren
+```
+apt full-upgrade
+```
+Hiermee installeer je de nieuwste versies van de distributie.
+
+### Een package installeren
+```
+apt install <package-name>
+```
+Met apt-get install installeer je een programma. Bijvoorbeeld de Midnight Commander:
+
+### Een package verwijderen
+```
+apt remove <package-name>
+```
+Verwijder de binaries van de package, maar niet de configuratie bestanden
+
+### Een package verwijderen en opschonen
+```
+apt purge <package-name>
+```
+Verwijder de binaries van de package en ook de bijbehorende configuratie bestanden
+
+
+## Disk commando's
+
+### df (disk free)
+Het commando df, disk free, geeft een overzicht van disks en de gebruikte en vrije ruimte. 
+df kijk naar de gebruikte blocks op de disks. Met de switch -h toon je de grootte in MB en GB
+
+```
+df -h
+```
+
+### du (disk usage)
+Het commando du, disk usage, doorloopt de bestanden in een directory en toont de grootte van de bestanden. du telt geen hardlinks en geen bestanden waar je geen rechten voor voor hebt.
+
+Met de switch --max-depth kan je aangeven hoe diep je in de directory boom wilt zoeken. max-depth=1 zoekt alleen in de hoofd directory
+
+```
+du -h --max-depth=1
+```
+[explainshell](https://explainshell.com/explain?cmd=du -h --max-depth=1)
+
+
+## History
 Met de pijltjes up en down krijg je de commando’s die je eerder hebt uitgevoerd in de shell terug.
 
 Met het commando history vraag je alle eerder uitgevoerde commando’s op. Je krijgt een lijst met alle commando’s die in de history zijn opgeslagen.
@@ -172,6 +193,20 @@ history -c
 !<regelnum>
 ```
 
+## Netwerk commando's
+
+### ifconfig en ip
+
+|commando|omschrijving|
+|---|---|
+|```ifconfig```|Het oude vertrouwde commando om een overzicht te krijgen van de netwerk interfaces op je computer. Je krijgt alle bestaande interfaces (netwerk devices) te zien en de bijbehorende informatie zoals mac address, ip address, netmask en of het device is aangesloten.|
+|```ip a```|Het nieuwe commando waarmee je min of meer dezelfde informatie als met ifconfig te zien krijgt.|
+|```ip -4 a```|Toon alleen IPv4 adressen.|
+|```ip -6 a```|Toon alleen IPv6 adressen.|
+|```ip a show eth0```|Toon alleen informatie voor interface eth0.|
+|```ip n```|Geeft een lijst met ip adressen van computers die in de buurt zijn. Zowel de bereikbare computers als die in de arp cache worden getoond.|
+
+
 ## Processen
 
 ### Toon een lijst met processen met een bepaalde naam
@@ -197,7 +232,7 @@ fg
 ```
 Type 'fg' als je klaar bent om het programma weer naar de voorgrond te brengen
 
-## Achtergrond taken met 'screen'
+### Achtergrond taken met 'screen'
 Een andere manier om programma’s in de background uit te voeren is screen. Het voordeel van screen is dat programma’s die in een screen sessie zijn gestart ook beschikbaar blijven als je de terminal sluit. Je kan altijd weer terug naar je screen sessies. Handig als je een langdurig proces wilt starten, maar niet de hele tijd de terminal open wilt houden.
 
 Screen is geen standaard package en moet je meestal wel nog installeren: **apt-get install screen**

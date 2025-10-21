@@ -13,6 +13,7 @@ nav:
   - Tutorials:
     - Basis Programmeren: basis-programmeren.md
     - Koppeltabellen in Laravel: koppeltabellen-in-laravel.md
+    - NextJs tutorial: nextjs-tutorial.md
 
 theme: 
   name: material

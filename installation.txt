@@ -1,0 +1,6 @@
+pip install mkdocs
+pip install mkdocs-material
+
+run
+
+mkdocs serve
