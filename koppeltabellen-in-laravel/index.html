@@ -1,0 +1,1309 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../basis-programmeren/">
+      
+      
+        <link rel="next" href="../nextjs-tutorial/">
+      
+      
+      <link rel="icon" href="../assets/icons/note-search-blue-16.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Koppeltabellen in Laravel - SD Cheat Sheets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Segoe UI";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/sdcheatsheets.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#koppeltabellen-in-laravel" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SD Cheat Sheets" class="md-header__button md-logo" aria-label="SD Cheat Sheets" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SD Cheat Sheets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Koppeltabellen in Laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Zoeken">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Leegmaken" aria-label="Leegmaken" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Zoeken initialiseren
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SD Cheat Sheets" class="md-nav__button md-logo" aria-label="SD Cheat Sheets" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    SD Cheat Sheets
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cheat Sheets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cheat Sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CSS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phpenmysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PHP en MySQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../laravel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basis-programmeren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basis Programmeren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Koppeltabellen in Laravel
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Koppeltabellen in Laravel
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wat-gaan-we-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wat gaan we maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starter-project-installeren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starter project installeren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#het-datamodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Het datamodel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-voor-de-ability_hero-tabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration voor de ability_hero tabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-abilityhero-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model AbilityHero maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#belongstomany-in-hero-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      BelongsToMany in Hero Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#een-view-voor-de-koppeltabel-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Een View voor de koppeltabel maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-herocontroller-aanpassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      De HeroController aanpassen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-koppeltabel-view-includen-in-de-create-en-edit-view-van-heroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      De koppeltabel View includen in de create en edit View van heroes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-store-en-update-functies-aanpassen-om-de-gelinkte-abilities-op-te-slaan" class="md-nav__link">
+    <span class="md-ellipsis">
+      De store en update functies aanpassen om de gelinkte abilities op te slaan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TODO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-restrict-delete-ability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test 1 - restrict delete Ability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-cascade-delete-hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test 2 - cascade delete Hero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nette-melding-voor-de-gebruiker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nette melding voor de gebruiker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      DONE
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nextjs-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NextJs tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wat-gaan-we-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wat gaan we maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starter-project-installeren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starter project installeren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#het-datamodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Het datamodel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-voor-de-ability_hero-tabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration voor de ability_hero tabel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-abilityhero-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model AbilityHero maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#belongstomany-in-hero-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      BelongsToMany in Hero Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#een-view-voor-de-koppeltabel-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      Een View voor de koppeltabel maken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-herocontroller-aanpassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      De HeroController aanpassen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-koppeltabel-view-includen-in-de-create-en-edit-view-van-heroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      De koppeltabel View includen in de create en edit View van heroes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-store-en-update-functies-aanpassen-om-de-gelinkte-abilities-op-te-slaan" class="md-nav__link">
+    <span class="md-ellipsis">
+      De store en update functies aanpassen om de gelinkte abilities op te slaan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      TODO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TODO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-restrict-delete-ability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test 1 - restrict delete Ability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-cascade-delete-hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test 2 - cascade delete Hero
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nette-melding-voor-de-gebruiker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nette melding voor de gebruiker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      DONE
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="sdcs-header">
+<p><img alt="" src="../assets/images/koppeltabellen-logo.png" /></p>
+</div>
+<h1 id="koppeltabellen-in-laravel">Koppeltabellen in Laravel</h1>
+<h2 id="wat-gaan-we-maken">Wat gaan we maken</h2>
+<p>We maken een Laravel applicatie waarmee we <strong>Abilities</strong> aan een Marvel <strong>Hero</strong> kunnen koppelen. </p>
+<p>Dus bijvoorbeeld de hero "Thor" heeft de abilities "Flight" en "Teleportation"</p>
+<p>We hebben om te beginnen twee tabellen nodig. De tabel <strong>heroes</strong> en de tabel <strong>abilities</strong>.</p>
+<p>Het doel is een applicatie waarmee we een hero kunnen koppelen aan 1 of meer abilities. Dit doe je met een zogenaamde <strong>many-to-many</strong> relatie, ook wel een koppeltabel genoemd. </p>
+<p>Laravel heeft hiervoor een paar handige functies. Je krijgt hieronder stap voor stap te zien hoe je dit met Laravel werkend kunt krijgen.</p>
+<h2 id="starter-project-installeren">Starter project installeren</h2>
+<p>Bij deze tutorial hoort een starter project. Met dit project krijg je een werkende applicatie om heroes en abilities toe te voegen, te wijzigen en te verwijderen. </p>
+<p>De koppeling tussen een hero en de abilities zit er nog niet in, die ga je zelf toevoegen.</p>
+<p>Open een terminal in de directory waar je het project wilt bewaren en clone de repository:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone --branch starter https://github.com/Dawied/marvelheroes.git
+</span></code></pre></div>
+<p>Open het project in je favoriete IDE en open een terminal</p>
+<p>Voer vervolgens de volgende commando's uit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>composer install
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm install
+</span></code></pre></div>
+<p>Rename het bestand <strong>.env.example</strong> naar <strong>.env</strong> en open het bestand in de editor. Pas de database gegevens aan zodat de applicatie kan inloggen in de database:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>DB_USERNAME=jouw_username
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>DB_PASSWORD=jouw_password
+</span></code></pre></div>
+<p>Genereer een app key:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>php artisan key:generate
+</span></code></pre></div>
+<p>Run nu het commando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>php artisan migrate
+</span></code></pre></div>
+<p>Bij de vraag of je de database wilt aanmaken, kies je voor <strong>yes</strong> </p>
+<p>Het starter project heeft een handige set met testdata, run:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>php artisan db:seed
+</span></code></pre></div></p>
+<p>De database is nu aangemaakt en gevuld met testdata. Je bent klaar om de applicatie uit te testen.</p>
+<p>Run het commando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>composer run dev
+</span></code></pre></div>
+<p>En open in je browser http://localhost:8000</p>
+<p>Je krijgt de starter applicatie te zien met de testdata. Probeer of je heroes en abilities kan toevoegen, wijzigen en verwijderen. </p>
+<p>Als alles naar behoren werkt kunnen we door naar het bouwen van de koppeling tussen heroes en abilities</p>
+<h2 id="het-datamodel">Het datamodel</h2>
+<p>Het ERD met de koppeltabel ziet er als volgt uit:</p>
+<p><img alt="" src="../assets/images/marvelheroes_erd.png" /></p>
+<p>De tabellen heroes en abilities zitten al in de starter. </p>
+<p>Je ziet dat er tussen de heroes en de abilities een nieuwe tabel staat. Dit is de koppeltabel. In de koppeltabel zit alleen de primary key van de hero en de primary key van de ability.</p>
+<div class="admonition note">
+<p class="admonition-title">Naamgeving koppeltabellen</p>
+<p>De tabel noemen we ability_hero omdat hij de tabellen ability en hero aan elkaar koppelt. De standaard conventie voor een koppeltabel in Laravel is als volgt:</p>
+<p>Gebruik de namen van de gekoppelde tabellen in <strong>enkelvoud</strong> en zet ze achter elkaar in <strong>alfabetische volgorde</strong>, met een underscore ertussen.</p>
+<p>Dus:</p>
+<p>tabel <strong>heroes</strong> in enkelvoud is <strong>hero</strong>, <strong>abilities</strong> in enkelvoud is <strong>ability</strong>, in alfabetische volgorde wordt dit: <strong>ability_hero</strong>. </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Zelf een databasemodel ontwerpen</p>
+<p>Het bovenstaande plaatje is gemaakt met de online tool <a target="_blank" href="https://dbdiagram.io">dbdiagram.io</a>. Met deze tool kan je een database diagram maken met <strong>Database Markup Language (DBML)</strong>. Het diagram hierboven is gemaakt met het volgende DMBL script:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Table heroes {
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  id int [primary key]
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  name varchar(200)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  description text
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>}
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Table abilities {
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  id int [primary key]
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  name varchar(200)
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  description text
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>}
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>Table ability_hero {
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>  id int [primary key]
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>  ability_id int [ref: &gt; abilities.id]
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  hero_id int [ref: &gt; heroes.id]
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>}
+</span></code></pre></div>
+</div>
+<h2 id="migration-voor-de-ability_hero-tabel">Migration voor de ability_hero tabel</h2>
+<p>Maak de Laravel migration voor de ability_hero: </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>php artisan make:migration create_ability_hero
+</span></code></pre></div>
+<p>Open de nieuwe aangemaakte migration in de editor en voeg de hero_id en ability_id toe als foreignId's:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;ability_hero&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">();</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">foreignId</span><span class="p">(</span><span class="s1">&#39;hero_id&#39;</span><span class="p">);</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">foreignId</span><span class="p">(</span><span class="s1">&#39;ability_id&#39;</span><span class="p">);</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="p">});</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>En voer de migration uit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>php artisan migrate
+</span></code></pre></div>
+<h2 id="model-abilityhero-maken">Model AbilityHero maken</h2>
+<p>Maak het model AbilityHero:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>php artisan make:model AbilityHero
+</span></code></pre></div></p>
+<h2 id="belongstomany-in-hero-model">BelongsToMany in Hero Model</h2>
+<p>In het Hero model maken we de relatie voor de many-to-many relatie tussen heroes en abilities. Dit doen we met de Laravel belongsToMany() function.</p>
+<p><strong>Een hero is gekoppeld aan 1 of meer abilities</strong></p>
+<p>Voeg de volgende functie toe:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">abilities</span><span class="p">()</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsToMany</span><span class="p">(</span><span class="nx">Ability</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="een-view-voor-de-koppeltabel-maken">Een View voor de koppeltabel maken</h2>
+<p>Nu maken we een view waarmee we een lijst met Abilities tonen met checkboxes ernaast. Door de checkboxen aan te vinken kan de gebruiker Abilities koppelen aan de Hero. </p>
+<p>De View wordt geïnclude in de create.blade.php en de edit.blade.php van Hero.</p>
+<p>Maak een nieuw bestand in resources/views/heroes en noem het bestand <strong>abilities_checkbox_table.blade.php</strong></p>
+<p>Voeg de onderstaande code toe aan het bestand:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Abilities</span><span class="o">&lt;/</span><span class="nx">label</span><span class="o">&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="o">&lt;</span><span class="nx">table</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;table&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="o">&lt;</span><span class="nx">tbody</span><span class="o">&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="o">@</span><span class="k">foreach</span><span class="p">(</span><span class="nv">$abilities</span> <span class="k">as</span> <span class="nv">$ability</span><span class="p">)</span> 
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>            <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>                <span class="o">&lt;</span><span class="nx">input</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>                    <span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;link&quot;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>                    <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;linkedAbilities[]&quot;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>                    <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;{{ </span><span class="si">$ability-&gt;id</span><span class="s2"> }}&quot;</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>                    <span class="p">{{</span> <span class="nv">$linkedAbilities</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;ability_id&#39;</span><span class="p">,</span> <span class="nv">$ability</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span> <span class="o">?</span> <span class="s1">&#39;checked&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">}}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>                <span class="o">&gt;</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>            <span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>            <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{{</span><span class="nv">$ability</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">}}</span><span class="o">&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>        <span class="o">&lt;/</span><span class="nx">tr</span><span class="o">&gt;</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="o">@</span><span class="k">endforeach</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="o">&lt;/</span><span class="nx">tbody</span><span class="o">&gt;</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="o">&lt;/</span><span class="nx">table</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h2 id="de-herocontroller-aanpassen">De HeroController aanpassen</h2>
+<p>Bekijk de code van abilities_checkbox_table.blade.php hierboven. Je ziet dat er twee variabelen gebruikt worden: <strong>$abilities</strong> en <strong>$linkedAbilities</strong>. In $abilities zit een lijst met alle beschikbare abilities. In $linkedAbilities zitten de abilities die al gelinkt zijn met de Hero. </p>
+<p>Deze twee variabelen moeten we vanuit de controller meegeven aan de create View en de edit View.</p>
+<p>Pas in de HeroController eerst de functie create() aan. We halen alle abilities op. Voor de lijst met gelinkte abilities gebruiken we een lege Collection omdat we een nieuwe Hero aanmaken en er dus nog geen gelinkte abilities zijn. We geven de variabelen mee aan de view.</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="hll">  <span class="nv">$abilities</span> <span class="o">=</span> <span class="nx">Ability</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+</span></span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="hll">  <span class="nv">$linkedAbilities</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Collection</span><span class="p">();</span>
+</span></span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>  <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;heroes.create&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;abilities&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedAbilities&#39;</span><span class="p">));</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Pas in de HeroController de functie edit() aan. We halen alle abilities op. Voor de lijst met gelinkte abilities halen we de gelinkte abilities op. We geven de variabelen mee aan de view.</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">edit</span><span class="p">(</span><span class="nx">Hero</span> <span class="nv">$hero</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="hll">    <span class="nv">$abilities</span> <span class="o">=</span> <span class="nx">Ability</span><span class="o">::</span><span class="na">all</span><span class="p">();</span>
+</span></span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="hll">    <span class="nv">$linkedAbilities</span> <span class="o">=</span> <span class="nx">AbilityHero</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;hero_id&#39;</span><span class="p">,</span> <span class="nv">$hero</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+</span></span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;heroes.edit&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;hero&#39;</span><span class="p">,</span> <span class="s1">&#39;abilities&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedAbilities&#39;</span><span class="p">));</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="de-koppeltabel-view-includen-in-de-create-en-edit-view-van-heroes">De koppeltabel View includen in de create en edit View van heroes</h2>
+<p>Nu includen we de nieuwe View in de create en edit views van heroes:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&quot;{{ route(&#39;heroes.store&#39;) }}&quot;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="o">@</span><span class="nx">csrf</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;form-group&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="o">&gt;</span><span class="nx">Name</span><span class="o">&lt;/</span><span class="nx">label</span><span class="o">&gt;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span> <span class="nx">required</span><span class="o">&gt;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="hll">    <span class="o">&lt;!--</span> <span class="k">include</span> <span class="nx">de</span> <span class="nx">tabel</span> <span class="nx">met</span> <span class="nx">te</span> <span class="nx">linken</span> <span class="nx">abilities</span> <span class="o">--&gt;</span>
+</span></span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="hll">    <span class="o">@</span><span class="k">include</span><span class="p">(</span><span class="s1">&#39;heroes.abilities_checkbox_table&#39;</span><span class="p">)</span>
+</span></span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary mt-4&quot;</span><span class="o">&gt;</span><span class="nx">Save</span><span class="o">&lt;/</span><span class="nx">button</span><span class="o">&gt;</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&quot;{{ route(&#39;heroes.update&#39;, </span><span class="si">$hero-&gt;id</span><span class="s2">) }}&quot;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="o">@</span><span class="nx">csrf</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="o">@</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;form-group&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="o">&gt;</span><span class="nx">Name</span><span class="o">&lt;/</span><span class="nx">label</span><span class="o">&gt;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;{{ </span><span class="si">$hero-&gt;name</span><span class="s2"> }}&quot;</span> <span class="nx">required</span><span class="o">&gt;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="hll">    <span class="o">&lt;!--</span> <span class="k">include</span> <span class="nx">de</span> <span class="nx">tabel</span> <span class="nx">met</span> <span class="nx">te</span> <span class="nx">linken</span> <span class="nx">abilities</span> <span class="o">--&gt;</span>
+</span></span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="hll">    <span class="o">@</span><span class="k">include</span><span class="p">(</span><span class="s1">&#39;heroes.abilities_checkbox_table&#39;</span><span class="p">)</span>
+</span></span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary mt-4&quot;</span><span class="o">&gt;</span><span class="nx">Save</span><span class="o">&lt;/</span><span class="nx">button</span><span class="o">&gt;</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="o">&lt;/</span><span class="nx">form</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h2 id="de-store-en-update-functies-aanpassen-om-de-gelinkte-abilities-op-te-slaan">De store en update functies aanpassen om de gelinkte abilities op te slaan</h2>
+<p>Dit is de allerlaatste stap. In de code van abilities_checkbox_table.blade.php kan je zien dat de aangevinkte checkboxen worden verzameld in de array <strong>linkedAbilities</strong>. Die array is dus terug te vinden in de request van de edit en create forms.</p>
+<p>Met die informatie kunnen we in de store en de update van de HeroController onze koppeltabel vullen met nieuwe Hero-Ability relaties, of juist de bestaande relaties updaten.</p>
+<p>Hiervoor bestaan twee handige functies in Laravel: <strong>attach()</strong> om nieuwe relaties toe te voegen en <strong>sync()</strong> om oude relaties te verwijderen en nieuwe toe te voegen. </p>
+<p>Sync en Attach werken met een array van id's, in ons geval dus de linkedAbilities array van onze checkboxen. </p>
+<p>Pas de store() in de HeroController aan en voeg een attach() toe:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="p">]);</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="nv">$hero</span> <span class="o">=</span> <span class="nx">Hero</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">());</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="hll">    <span class="nv">$hero</span><span class="o">-&gt;</span><span class="na">abilities</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;linkedAbilities&#39;</span><span class="p">));</span>
+</span></span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;heroes.index&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Hero created&#39;</span><span class="p">);</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>pas ook de update() in de HeroController aan en voeg een sync() toe:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Hero</span> <span class="nv">$hero</span><span class="p">)</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="p">]);</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    <span class="nv">$hero</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">());</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="hll">    <span class="nv">$hero</span><span class="o">-&gt;</span><span class="na">abilities</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">sync</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;linkedAbilities&#39;</span><span class="p">));</span>
+</span></span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;heroes.index&#39;</span><span class="p">)</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Hero updated&#39;</span><span class="p">);</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="testen">Testen</h2>
+<p>Je bent klaar! Met een minimum aan code heb je op een eenvoudige manier een koppeling mogelijk gemaakt tussen Heroes en Abilities. De gebruiker vinkt de gewenste abilities aan in het formulier en de koppeltabel wordt netjes bijgewerkt.</p>
+<p>Uiteraard kan je deze techniek voor een willekeurige andere many-to-many relatie gebruiken.</p>
+<p>Test de applicatie door een nieuwe Hero met Abilities toe te voegen en te wijzigen. Kijk ook in de koppeltabel om de nieuwe relaties te bekijken.</p>
+<h2 id="todo">TODO</h2>
+<p>Er blijft een belangrijk puntje open in deze tutorial. </p>
+<p>Als een Hero gelinkt is aan een Ability, en je verwijderd die Ability dan blijft de link bestaan. Je zal de link niet meer zien in de applicatie, maar in de tabel ability_hero kan je de link nog wel terugvinden. Dat is niet netjes.</p>
+<p>En als je een Hero verwijderd die links had met Abilities dan blijven die links ook bestaan in de database.</p>
+<p>Per applicatie moet je zelf bepalen wat gewenst is. In het geval van onze Heroes en Abilities is het volgende logisch:</p>
+<p>Als de gebruiker een Ability probeert te verwijderen die nog gelinkt is aan een Hero dan staan we dat niet toe. De gebruiker krijgt een foutmelding die uitlegt dat de Ability nog niet verwijderd kan worden omdat die nog gebruikt wordt. Dit doen we met een <strong>restrict delete</strong> in de database.</p>
+<p>Als de gebruiker een Hero verwijderd dan verwijderen we ook de links met Abilities voor die Hero. Dit doen we met een <strong>cascade delete</strong>.</p>
+<p>Pas de migration van de ability_hero tabel aan:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;ability_hero&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">();</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="hll">        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">foreignId</span><span class="p">(</span><span class="s1">&#39;hero_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">constrained</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">onDelete</span><span class="p">(</span><span class="s1">&#39;cascade&#39;</span><span class="p">);</span>
+</span></span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="hll">        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">foreignId</span><span class="p">(</span><span class="s1">&#39;ability_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">constrained</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">onDelete</span><span class="p">(</span><span class="s1">&#39;restrict&#39;</span><span class="p">);</span>
+</span></span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="p">});</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ververs de migrations:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>php artisan migrate:fresh
+</span></code></pre></div>
+<p>En seed de (nu lege) database opnieuw met onze testdata:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>php artisan db:seed
+</span></code></pre></div>
+<p>Nu gaan we goed testen:</p>
+<h3 id="test-1-restrict-delete-ability">Test 1 - restrict delete Ability</h3>
+<ol>
+<li>Koppel een Ability aan een Hero</li>
+<li>Check in de tabel ability_hero dat de link is aangemaakt</li>
+<li>Probeer de Ability te verwijderen, als het goed is krijg je een Laravel foutmelding</li>
+<li>Check dat de link nog steeds aanwezig is in de tabel</li>
+</ol>
+<p>De restrict delete werkt, de Ability kan niet verwijderd worden als die gebruikt wordt in een link met een Hero. De foutmelding is niet netjes, maar dat lossen we straks op.</p>
+<h3 id="test-2-cascade-delete-hero">Test 2 - cascade delete Hero</h3>
+<ol>
+<li>Koppel een Ability aan een Hero</li>
+<li>Check in de tabel ability_hero dat de link is aangemaakt</li>
+<li>Verwijder de Hero, er hoort geen foutmelding te komen</li>
+<li>Check in de tabel ability_hero dat de link is verwijderd</li>
+</ol>
+<p>De cascade delete werkt. Als een Hero wordt verwijderd dan worden automatisch de gelinkte abilities uit de koppeltabel verwijderd.</p>
+<h3 id="nette-melding-voor-de-gebruiker">Nette melding voor de gebruiker</h3>
+<p>Blijft over de lelijke foutmelding als we een gelinkte Ability proberen te verwijderen. Die gaan we vervangen met een nette melding voor de gebruiker.</p>
+<p>Je moet in de destroy() functie in de AbilityController zijn. Hier zouden we de $ability-&gt;delete() in een try-catch kunnen zetten en een foutmelding geven als de catch afgaat. Maar, je kan ook eerst controleren of er nog gebruikt wordt gemaakt van de Ability. Die laatste optie kiezen we hier, <em>'voorkomen is beter dan genezen'</em>.</p>
+<p>Controleer eerst of de ability nog gebruikt wordt, zoja, geef een melding aan de gebruiker:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">public</span> <span class="k">function</span> <span class="nf">destroy</span><span class="p">(</span><span class="nx">Ability</span> <span class="nv">$ability</span><span class="p">)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">{</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="hll">    <span class="nv">$exists</span> <span class="o">=</span> <span class="nx">AbilityHero</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;ability_id&#39;</span><span class="p">,</span> <span class="nv">$ability</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">();</span>
+</span></span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="hll">    <span class="k">if</span> <span class="p">(</span><span class="nv">$exists</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="hll">        <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;abilities.index&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Cannot delete this Ability because it is still being used&#39;</span><span class="p">);</span>
+</span></span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="hll">    <span class="p">}</span>
+</span></span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>    <span class="nv">$ability</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>    <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">route</span><span class="p">(</span><span class="s1">&#39;abilities.index&#39;</span><span class="p">)</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>        <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;Ability deleted&#39;</span><span class="p">);</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>En in de index.blade.php van abilities voeg je code toe om de melding te laten zien:</p>
+<div class="language-php-inline highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="o">@</span><span class="k">if</span><span class="p">(</span><span class="nx">session</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">))</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;alert alert-danger&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>        <span class="p">{{</span> <span class="nx">session</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="o">@</span><span class="k">endif</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="o">@</span><span class="k">if</span><span class="p">(</span><span class="nx">session</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">))</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;alert alert-success&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>        <span class="p">{{</span> <span class="nx">session</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    <span class="o">&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="o">@</span><span class="k">endif</span>
+</span></code></pre></div>
+<h2 id="done">DONE</h2>
+<p>Het zit erop. Hopelijk kan je dit voorbeeld goed gebruiken om in je eigen applicaties koppeltabellen te implementeren. </p>
+<p><strong>Bedankt voor je aandacht en happy coding!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.sections"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
